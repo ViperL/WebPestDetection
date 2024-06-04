@@ -1,0 +1,25 @@
+！！！---本项目仅供交流学习，禁止商用---！！！
+    如引用本项目内容请标明出处。
+    欢迎关注作者B站：https://space.bilibili.com/77949927
+    和CSDN：https://blog.csdn.net/weixin_37878740?spm=1000.2115.3001.5343
+
+--->项目须知：
+    本项目需要PyTorch2.0、Flask2.0和Python3.9以上的运行环境，需要安装MySQL。
+    本项目前端基于jinjia2，不支持前后端分离。
+    本项目的权鉴基于session，不支持web api，需要使用web api的请自行修改。
+    内嵌有Faster RCNN模型，未提供权重文件，有需要可以自行使用train.py训练自己的数据。
+    模型来自B站bubbliiiing大佬，git链接为：https://github.com/bubbliiiing/faster-rcnn-pytorch
+    模型的训练和部署参见原作者B站账号。
+--->项目部署：
+    ①数据库配置：
+      转到config.py，按照你的数据库信息填写数据库配置文件
+    ②数据库部署：
+      在运行项目前请先部署数据库，本项目基于ORM模式，可以使用脚本自动部署数据库，请在部署前确认是否安装MySql。
+      请依次在控制台中运行下列三个命令：
+	flask db init
+	flask db migrate
+	flask db upgrade
+    ③运行项目
+      转到app.py，直接运行，随后根据控制台的提示访问即可。
+    ④创建账户
+      访问账户注册页面创建一个账户，随后即可正常使用。

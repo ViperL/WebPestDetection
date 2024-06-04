@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+        <link rel="stylesheet" href="{{url_for("static",filename='css/CommStyle.css')}}"/>
+        <title>在线害虫识别系统-正在修改密码</title>
+    </head>
+    <body>
+        <header>
+            <div class="header public-width">
+                <div class="logo">
+                    <img src="{{url_for("static",filename='src/bug_icon.svg')}}" width="40" height="40" />
+                    <h3>在线害虫检测</h3>
+                </div>
+                <div class"nav">
+                    <ul>
+                        <li>
+                            <a href="{{url_for("anayer.homepage")}}">首页</a>
+                            <a href="{{url_for("anayer.database")}}">数据</a>
+                            <a href="{{url_for("auth.account_edit")}}">用户：{{g.username}}</a>
+                            <a href={{url_for('auth.logout')}}>退出</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    <body>
+        <div class="banner">
+            <div class="public-width">
+                <img src="{{url_for("static",filename='src/x_banner.jpg')}}"/>
+            </div>
+        </div>
+        <form name="acount" action="" method="post" enctype="multipart/form-data">
+            <div class="Form public-width">
+                <span>
+                    <p>帐号</p>
+                    <a>{{g.username}}</a>
+                    <p>请输入原密码</p>
+                    <input class="txt" name="pswold" type="password"/>
+                    <p>请设置新密码</p>
+                    <input class="txt" name="psw" type="password"/>
+                    <p>请确认新密码</p>
+                    <input class="txt" name="psw2" type="password"/>
+                    <div class="btnpanel">
+                        <button class="btn" type="submit">确认修改</button>
+                        <button class="btn" type="button" onClick="{location.href='{{url_for("anayer.homepage")}}'}">取消</button>
+                    </div>
+                </span>
+            </div>
+        </form>
+    </body>
+    <footer class="footer">
+        <p>在线害虫检测系统 2023.1.1 由ViperL1设计</p>
+    </footer>
+</html>

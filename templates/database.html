@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+        <link rel="stylesheet" href="{{url_for("static",filename='css/HomePageStyle.css')}}"/>
+        <title>欢迎来到在线害虫识别系统</title>
+    </head>
+    <body>
+        <header>
+            <div class="header public-width">
+                <div class="logo">
+                    <img src="{{url_for("static",filename='src/bug_icon.svg')}}" width="40" height="40" />
+                    <h3>在线害虫检测</h3>
+                </div>
+                <div class"nav">
+                    <ul>
+                        <li>
+                            <a href="{{url_for("anayer.homepage")}}">首页</a>
+                            <a href="{{url_for("anayer.database")}}">数据</a>
+                            <a href="{{url_for("auth.account_edit")}}">用户：{{g.username}}</a>
+                            <a href={{url_for('auth.logout')}}>退出</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="public-width">
+            <a href="{{url_for("anayer.homepage")}}">
+                <h1>返回上层</h1>
+            </a>
+        </div>
+        <div class="public-width">
+            <h1 style="text-align: center;">数据预览</h1>
+        </div>
+        <div class="box">
+            <div class="public-width">
+                {% for img in imgs %}
+                    <div class="list">
+                        {% if img.newname!=None%}
+                            <a href="detall?name={{img.tempname}}&orgname={{img.orgname}}">
+                                <div class="list-img">
+                                    <img src="{{url_for("static",filename='results/'+img.tempname)}}">
+                                </div>
+                                <div class="list-text">
+                                    <p>{{img.orgname}}</p>
+                                    <p>已完成</p>
+                                </div>
+                            </a>
+                        {% else%}
+                        <div class="list-img">
+                            <img src="{{url_for("static",filename='uploads/'+img.tempname)}}">
+                        </div>
+                        <div class="list-text">
+                            <p>{{img.orgname}}</p>
+                            <p>未完成</p>
+                        </div>
+                    {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="public-width">
+                <div class="linkpanel">
+                    <a href="">上一页</a>
+                    <a href="">当前页面：1</a>
+                    <a href="">下一页</a>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer class="footer">
+        <p>在线害虫检测系统 2023.1.1 由ViperL1设计</p>
+    </footer>
+</html>

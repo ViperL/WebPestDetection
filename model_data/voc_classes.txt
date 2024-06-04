@@ -1,0 +1,5 @@
+aphids
+caterpillar
+dish
+jumpings
+leaves

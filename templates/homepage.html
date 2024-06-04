@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+        <link rel="stylesheet" href="{{url_for("static",filename='css/HomePageStyle.css')}}"/>
+        <title>欢迎来到在线害虫识别系统</title>
+    </head>
+    <body>
+        <header>
+            <div class="header public-width">
+                <div class="logo">
+                    <img src="{{url_for("static",filename='src/bug_icon.svg')}}" width="40" height="40" />
+                    <h3>在线害虫检测</h3>
+                </div>
+                <div class"nav">
+                    <ul>
+                        <li>
+                            <a href="{{url_for("anayer.homepage")}}">首页</a>
+                            <a href="{{url_for("anayer.database")}}">数据</a>
+                            <a href="{{url_for("auth.account_edit")}}">用户：{{g.username}}</a>
+                            <a href={{url_for('auth.logout')}}>退出</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="box">
+            <div class="public-width">
+                <h1>功能列表</h1>
+            </div>
+            <div class="public-width">
+                <div class="list">
+                    <a href="{{url_for("anayer.uploader")}}">
+                        <div class="list-img">
+                            <img src="{{url_for("static",filename='src/anayer_ico.svg')}}">
+                        </div>
+                        <div class="list-text">
+                            <p>识别害虫</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="list">
+                    <a href="{{url_for("anayer.database")}}">
+                        <div class="list-img">
+                            <img src="{{url_for("static",filename='src/data_ico.svg')}}">
+                        </div>
+                        <div class="list-text">
+                            <p>数据管理</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="list">
+                    <a href="{{url_for("auth.account_edit")}}">
+                        <div class="list-img">
+                            <img src="{{url_for("static",filename='src/account_ico.svg')}}">
+                        </div>
+                        <div class="list-text">
+                            <p>帐号管理</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="list">
+                    <a href="{{url_for('anayer.about')}}">
+                        <div class="list-img">
+                            <img src="{{url_for("static",filename='src/about_ico.svg')}}">
+                        </div>
+                        <div class="list-text">
+                            <p>关于我们</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="list">
+                    <a href="{{url_for("static",filename='src/info.pdf')}}" target="_blank">
+                        <div class="list-img">
+                            <img src="{{url_for("static",filename='src/power.svg')}}">
+                        </div>
+                        <div class="list-text">
+                            <p>模型性能</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer class="footer">
+        <p>在线害虫检测系统 2023.1.1 由ViperL1设计</p>
+    </footer>
+</html>
